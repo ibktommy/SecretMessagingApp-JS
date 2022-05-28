@@ -10,5 +10,5 @@ form.addEventListener("submit", (event) => {
 	// Select Message Input and Encode It
 	const encrypted = btoa(messageInput.value);
 
-	linkInput.value = encrypted;
+	linkInput.value = `${window.location}#${encrypted}`;
 });
