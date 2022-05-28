@@ -4,6 +4,7 @@ const messageInput = document.querySelector("#message-input");
 const linkInput = document.querySelector("#link-input");
 const messageForm = document.querySelector("#message-form");
 const linkForm = document.querySelector("#link-form");
+const { hash } = window.location;
 
 // Add Event Listener on Form
 form.addEventListener("submit", (event) => {
