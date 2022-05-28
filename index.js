@@ -5,7 +5,8 @@ const linkInput = document.querySelector("#link-input");
 const messageForm = document.querySelector("#message-form");
 const linkForm = document.querySelector("#link-form");
 const { hash } = window.location;
-const showDecodedMessage = document.querySelector("#showDecodedMessage");
+const decodedMessageForm = document.querySelector("#decodedMessageForm");
+const decodedMessage = document.querySelector("h1");
 
 // Add Event Listener on Form
 form.addEventListener("submit", (event) => {
@@ -25,10 +26,12 @@ form.addEventListener("submit", (event) => {
 });
 
 // Decoding the Message submitted
-const decodedMessage = atob(hash.replace("#", ""));
+const messageCode = atob(hash.replace("#", ""));
 
 // Condition to check if decodeMessage is not null/false
-if (decodedMessage) {
+if (messageCode) {
 	messageForm.classList.add("hide");
-	showDecodedMessage.classList.remove("hide");
+	decodedMessageForm.classList.remove("hide");
+
+	decodedMessage.innerHTML = messageCode;
 }
