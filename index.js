@@ -22,3 +22,6 @@ form.addEventListener("submit", (event) => {
 	linkInput.value = `${window.location}#${encrypted}`;
 	linkInput.select();
 });
+
+// Decoding the Message submitted
+const decodedMessage = atob(hash.replace("#", ""));
