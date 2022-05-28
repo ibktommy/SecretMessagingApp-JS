@@ -9,14 +9,15 @@ const linkForm = document.querySelector("#link-form");
 form.addEventListener("submit", (event) => {
 	event.preventDefault();
 
+	// Hide Message Form when form is submitted
+	messageForm.classList.add("hide");
+
+	// Show Link Form when form is submitted
+	linkForm.classList.remove("hide");
+
 	// Select Message Input and Encode It
 	const encrypted = btoa(messageInput.value);
 
 	linkInput.value = `${window.location}#${encrypted}`;
 	linkInput.select();
-
-	// Hide Message Form when form is submitted
-	messageForm.classList.add("hide");
-	// Show Link Form when form is submitted
-	linkForm.classList.remove("hide");
 });
